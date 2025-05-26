@@ -2,7 +2,17 @@
 import MemoryCard from '@/components/MemoryCard.vue'
 import { useMemoryGame } from '@/composables/useMemoryGame'
 
-const { cards, moves, isGameWon, getStatus, openCard, resetGame,matches,totalPairs,hasTwoCardsOpened } = useMemoryGame()
+const {
+  cards,
+  moves,
+  isGameWon,
+  getStatus,
+  openCard,
+  resetGame,
+  matches,
+  totalPairs,
+  hasTwoCardsOpened,
+} = useMemoryGame()
 </script>
 
 <template>
@@ -15,8 +25,14 @@ const { cards, moves, isGameWon, getStatus, openCard, resetGame,matches,totalPai
     </div>
 
     <div class="board">
-      <MemoryCard v-for="(card, index) in cards" :key="index" :status="getStatus(index)" :disabled="hasTwoCardsOpened"
-        :image="card.image" @click="openCard(index)" />
+      <MemoryCard
+        v-for="(card, index) in cards"
+        :key="index"
+        :status="getStatus(index)"
+        :disabled="hasTwoCardsOpened"
+        :image="card.image"
+        @click="openCard(index)"
+      />
     </div>
 
     <button @click="resetGame">New Game</button>

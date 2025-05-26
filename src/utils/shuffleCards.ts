@@ -1,6 +1,6 @@
 import type { Card } from '@/types/cards'
 
-export const shuffleCards = (array : Card[]): Card[] => {
+export const shuffleCards = (array: Card[]): Card[] => {
   const result = [...array]
   for (let i = result.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
