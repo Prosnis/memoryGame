@@ -26,11 +26,7 @@ export function useMemoryGame() {
   }
 
   const openCard = (index: number) => {
-    if (
-      openedCards.value.has(index) ||
-      matchedCards.value.has(index) ||
-      openedCards.value.size >= 2
-    ) {
+    if ( openedCards.value.has(index) || matchedCards.value.has(index) || openedCards.value.size >= 2) {
       return
     }
     openedCards.value.add(index)
@@ -74,6 +70,9 @@ export function useMemoryGame() {
     resetGame,
     totalPairs,
     matches,
-    hasTwoCardsOpened
+    hasTwoCardsOpened,
+    openedCards,   
+    matchedCards,
+    checkMatch
   }
 }
